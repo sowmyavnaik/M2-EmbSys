@@ -3,19 +3,21 @@
 Password Based Door Lock System using 8051 Microcontroller is a simple project where a secure password will act as a door unlocking system. Password Based Circuit Breaker Password Based Door Lock System using 8051 Microcontroller is a simple project where a secure password will act as a door unlocking system. This system demonstrates a Password based Door Lock System using 8051 Microcontroller, wherein once the correct code or password is entered, the door is opened and the concerned person is allowed access to the secured area. Again, if another person arrives, it will ask to enter the password. If the password is wrong, then door would remain closed, denying access to the person.
 
 ## Block digram
+(https://github.com/sowmyavnaik/M2-EmbSys/blob/main/CaseStudy/Simple/Screenshot%20(257).png)
 
 ## High level requirements
 * Open the door
 * Close the door
+* Display the message "enter the password" on LCD
 * If entered password is incorrect display "wrong password" on LCD
 
 ## Low level requirements
-* Display the message "enter the password" on LCD
 * Read the five digit password from the user
 * compare the entered password with the stored password
 * If password correct, open the door
 * After some time close the door
 * If the password is wrong then display wrong pasword on Lcd
+* If the password is wrong also make a buzzer sound
 * After some delay again ask to enter password
 
 ## Principle Behind the Circuit

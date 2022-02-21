@@ -4,15 +4,19 @@ Finger print identification is based on the fact that no two persons will have t
 ## Principle
 Main heart of the circuit is finger print module. This sends commands to the controller when ever finger print is matched. Microcontroller receives these commands from the finger print module and uses the internal EEPROM to store the attendance. Keypad is used to send the requests to the controller either enroll the new one or to save the attendance or to exit.LCD display displays the messages related to the commands received.
 
+## Block diagram
+(https://github.com/sowmyavnaik/M2-EmbSys/blob/main/CaseStudy/Complex/Screenshot%20(259).png)
 
 ## Requirements
 ### High level requirements
 * LCD should display “Biometric Attendance System”.
 * After sometime it will display a message “1.Attendance, 2.Save, 3.Clear”.
+* If your finger is not matched  it will indicate the same.
 * After saving successfully your details it displays a message saved.
 
 ### Low level requirements
-* Now press 1 from the keypad. It will take the attendance if you place your finger on the module. If your finger is not matched  it will indicate the same.
+* Now press 1 from the keypad. It will take the attendance if you place your finger on the module. 
+* If your finger is not matched  it will indicate the same by a buzzer.
 * If you want to save your roll number press 2 from the keypad. It will ask you to enter the roll number and asks you to place your finger. 
 * To enroll again press 1 from the keypad and press 2 to exit.
 * If you want to clear the data press 3 from keypad and enter the password 
