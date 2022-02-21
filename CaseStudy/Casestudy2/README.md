@@ -5,7 +5,7 @@ Finger print identification is based on the fact that no two persons will have t
 Main heart of the circuit is finger print module. This sends commands to the controller when ever finger print is matched. Microcontroller receives these commands from the finger print module and uses the internal EEPROM to store the attendance. Keypad is used to send the requests to the controller either enroll the new one or to save the attendance or to exit.LCD display displays the messages related to the commands received.
 
 ## Block diagram
-(https://github.com/sowmyavnaik/M2-EmbSys/blob/main/CaseStudy/Complex/Screenshot%20(259).png)
+(https://github.com/sowmyavnaik/M2-EmbSys/blob/main/CaseStudy/Casestudy2/BD2.png)
 
 ## Requirements
 ### High level requirements
