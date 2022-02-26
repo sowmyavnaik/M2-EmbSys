@@ -23,7 +23,7 @@ Low level requirements for HLR 1	3
 5 Applications	6
 
 
-1.Introduction
+## 1.Introduction
 1.1 Description
 This is a password based door lock system. This a microcontroller based project which created a secure access for a door which needs a password to open the door. The system will be used in places where we need more security. It can be used in door, lockers, main gates of house and ATM etc. The system uses a seven segment display array to show the password, a matrix keypad to enter the numbers/password and operates a relay (to activate the solenoid valve) for locking and unlocking purpose. The system alarms through a buzzer if a wrong password is entered for 3 times continuously and the system resumes for 1 hour.
 1.2 Features
@@ -34,6 +34,10 @@ If a wrong password is entered for 3 times continuously and the system resumes f
 1.3 5W and 1H
  (https://github.com/sowmyavnaik/M2-EmbSys/blob/main/Project/5W%201H.png)
 1.4 SWOT analysis
+Strengths:
+For security purposes
+User friendly
+Weakness
 
 
 2. Requirements
