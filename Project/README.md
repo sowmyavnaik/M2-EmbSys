@@ -78,30 +78,30 @@ If a wrong password is entered for 3 times continuously and the system resumes f
  
 ## 3.2 Components
 ### 3.2.1 Sensors
-#### 4*4 Keypad
+### 4*4 Keypad
  To give user input i.e, a four digit password.
 
-#### Potentiometer
+### Potentiometer
  Here it can be used to vary the sound of the buzzer.
 
-#### Push buttons
+### Push buttons/switch
  Acts as a door locker for opening and closing of door.
 
-#### Led sensor
+### Led sensor
  To indicate the correct password. If a correct assword is given the led is turned on by a relay placed nearby.
 
 ### 3.2.2 Accuators
-#### Relay
+### Relay
  As soon as correct password is entered the relay is activated. This is indicated by a LED which is placed near the relay. Also used for locking and unlocking purpose.
 
-#### Buzzer
+### Buzzer
  It is used to notify if a wrong password is applied.
 
 ### 3.3.3 Other components
-#### Microcontroller
+### Microcontroller
  Here Atmega16 is used. It controls al the operations
 
-#### 7 segment Led
+### 7 segment Led
  To display the four digit password entered.
 
 # 4. Architetcure
