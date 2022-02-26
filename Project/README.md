@@ -1,26 +1,25 @@
 # Table of Contents
 * 1.Introduction
-** 1.1 Description	
-1.2 Features	
-1.3 5W and 1H	2
-1.4 SWOT analysis	2
-2. Requirements	2
-2.1 High level requirements	2
-2.2 Low level requirements	3
-Low level requirements for HLR 1	3
-3. Block diagram and components	4
-3.1 Block diagram	4
-3.2 Components	4
-3.2.1 Sensors	4
-3.2.2 Accuators	4
-3.3.3 Other components	4
-4. Architetcure	5
-4.1 Behavioral diagram	5
-4.1.1 High level flow chart	5
-4.1.1 Low level flow chart	5
-4.2 Structural diagram	5
-4.1.1 Using case diagram	5
-5 Applications	6
+ * 1.1 Description	
+ * 1.2 Features	
+ * 1.3 5W and 1H	
+ * 1.4 SWOT analysis	
+* 2. Requirements	
+ * 2.1 High level requirements	
+ * 2.2 Low level requirements	
+* 3. Block diagram and components	
+ * 3.1 Block diagram	
+ * 3.2 Components	
+  * 3.2.1 Sensors	
+  * 3.2.2 Accuators	
+  * 3.3.3 Other components	
+* 4. Architetcure	
+ * 4.1 Behavioral diagram	
+  * 4.1.1 High level flow chart	
+  * 4.1.1 Low level flow chart	
+ * 4.2 Structural diagram	
+  * 4.2.1 Using case diagram	
+* 5 Applications	
 
 
 # 1.Introduction
