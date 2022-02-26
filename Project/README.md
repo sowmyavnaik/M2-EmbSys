@@ -1,7 +1,7 @@
 # Table of Contents
-* 1.Introduction	1
-1.1 Description	1
-1.2 Features	1
+* 1.Introduction
+** 1.1 Description	
+1.2 Features	
 1.3 5W and 1H	2
 1.4 SWOT analysis	2
 2. Requirements	2
@@ -46,11 +46,11 @@ If a wrong password is entered for 3 times continuously and the system resumes f
 
 # 2. Requirements
 ## 2.1 High level requirements
-HLR 1. It shall take the input through 4*4 keypad matrix.
-HLR 2. It shall display the password on 7 segment led.
-HLR 3. Password shall me verified
-HLR 4. It shall turn the buzzer on if wrong password is entered.
-HLR 5. It shall turn on the led if correct password is given.
+* HLR 1. It shall take the input through 4*4 keypad matrix.
+* HLR 2. It shall display the password on 7 segment led.
+* HLR 3. Password shall me verified
+* HLR 4. It shall turn the buzzer on if wrong password is entered.
+* HLR 5. It shall turn on the led if correct password is given.
 
 ## 2.2 Low level requirements
 ### Low level requirements for HLR 1
