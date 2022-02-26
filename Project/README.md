@@ -31,7 +31,7 @@ The system uses a seven segment display array to show the password, a matrix key
 The system alarms through a buzzer.
 If a wrong password is entered for 3 times continuously and the system resumes for 1 hour.
 ## 1.3 5W and 1H
- (https://github.com/sowmyavnaik/M2-EmbSys/blob/main/Project/5W%201H.png)
+  ![linux_NDG](https://github.com/sowmyavnaik/M2-EmbSys/blob/main/Project/5W%201H.png)
 
 ## 1.4 SWOT analysis
 ### Strengths:
