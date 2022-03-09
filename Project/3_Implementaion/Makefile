@@ -4,10 +4,6 @@ MAIN_APP = main
 ## For testing
 TEST_MAIN = maintest
 
-TEST_SRC = onlytesting/onlytesting.c\
-src/test_project.c\
-unity/unity.c
-
 TEST_INC = -Iheader\
 -Iunity\
 
