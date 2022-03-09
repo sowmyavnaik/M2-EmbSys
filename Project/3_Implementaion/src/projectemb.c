@@ -1,18 +1,17 @@
-////////////////////***Password Based Digital Locker***////////////////////////
 void get_key(void);
-void run_key_function(void);
+void run_key(void);
 void display(void);
 void show_digit(char digit);
-void verify_password(void);
+void verify_pass(void);
 
 void uart_send_string(char strng[50]);
 void uart_send_char(char a);
 void eeprom_wrt(int addr,char dta);
 char eeprom_rd(int addr);
 
-char temp,column,key=0,number[4]={10,10,10,10},index,password[4],temp1,digit;
+char temp,col,key=0,no[4]={10,10,10,10},index,pass[4],temp1,digit;
 char show=1,open=0,match=0,temp2,miss_match,temp4,block=0;
-char contact_number[10]={'1','2','3','4','5','6','7','8','9','0'};
+char contact_no[10]={'1','2','3','4','5','6','7','8','9','0'};
 unsigned int wait;
 
 void block_time() iv IVT_ADDR_TIMER1_COMPA ics ICS_AUTO 
@@ -39,65 +38,65 @@ void block_time() iv IVT_ADDR_TIMER1_COMPA ics ICS_AUTO
 
 void get_key(void)
 {
-    for(column=1,temp=1;column<=4;temp*=2,column++)
+    for(col=1,temp=1;col<=4;temp*=2,col++)
     {
-        PORTB&=0XF0;    //Disable all columns without disturbing remaining pins
-        PORTB|=temp;    //Enable particular column leaving remaining port pins
+        PORTB&=0XF0;    //Disable all cols without disturbing remaining pins
+        PORTB|=temp;    //Enable particular col leaving remaining port pins
         switch(PINB&0XF0) //Read rows data and identify the
         {
             case 0X10:{                 //Row 1
-                        key=column;
+                        key=col;
                       }break;
             case 0X20:{                 //Row 2
-                        key=4+column;
+                        key=4+col;
                       }break;
             case 0X40:{                 //Row 3
-                        key=8+column;
+                        key=8+col;
                       }break;
             case 0X80:{                 //Row 4
-                        key=12+column;
+                        key=12+col;
                       }break;
         }
         if(key>=1)
         {
-            run_key_function();
+            run_key();
             do{  display();     }while((PINB&0XF0)!=0);  //Wait for key release
             key=0;          //Setting key value out of range
         }
     }
 }
 
-void run_key_function(void)
+void run_key(void)
 {
     switch(key)
     {
         case 1:{                  //KEY 1
-                    number[index]=1;
+                    no[index]=1;
                     index++;
                 }break;
         case 2:{                  //KEY 2
-                    number[index]=2;
+                    no[index]=2;
                     index++;
                 }break;
         case 3:{                  //KEY 3
-                    number[index]=3;
+                    no[index]=3;
                     index++;
                 }break;
         case 4:{                  //KEY 4
                     index--;
-                    number[index]=10;
+                    no[index]=10;
                     match=0;
                 }break;
         case 5:{                  //KEY 5
-                    number[index]=4;
+                    no[index]=4;
                     index++;
                 }break;
         case 6:{                  //KEY 6
-                    number[index]=5;
+                    no[index]=5;
                     index++;
                 }break;
         case 7:{                  //KEY 7
-                    number[index]=6;
+                    no[index]=6;
                     index++;
                 }break;
         case 8:{                  //KEY 8
@@ -105,20 +104,20 @@ void run_key_function(void)
                     {
                         for(temp2=0;temp2<=3;temp2++)
                         {
-                            number[temp2]=10;
+                            no[temp2]=10;
                         }
                     }
                }break;
         case 9:{                  //KEY 9
-                    number[index]=7;
+                    no[index]=7;
                     index++;
                 }break;
         case 10:{                 //KEY 10
-                    number[index]=8;
+                    no[index]=8;
                     index++;
                 }break;
         case 11:{                 //KEY 11
-                    number[index]=9;
+                    no[index]=9;
                     index++;
                 }break;
         case 12:{                 //KEY 12
@@ -126,11 +125,11 @@ void run_key_function(void)
                     {
                         for(temp2=0;temp2<=3;temp2++)
                         {
-                            password[temp2]=number[temp2];
+                            pass[temp2]=no[temp2];
                         }
                         for(temp2=0;temp2<=3;temp2++)
                         {
-                            eeprom_wrt(temp2,password[temp2]);
+                            eeprom_wrt(temp2,pass[temp2]);
                         }
                     }
                 }break;
@@ -138,12 +137,12 @@ void run_key_function(void)
                     index=0;
                     for(temp2=0;temp2<=3;temp2++)
                     {
-                        number[temp2]=10;
+                        no[temp2]=10;
                     }
                     PORTC&=0XFD;
                 }break;
         case 14:{                 //KEY 14
-                    number[index]=0;
+                    no[index]=0;
                     index++;
                 }break;
         case 15:{                 //KEY 15
@@ -151,8 +150,8 @@ void run_key_function(void)
                     show%=2;
                 }break;
         case 16:{                 //KEY 16
-                    verify_password();   //Goto verification function
-                    if(match==1)    //If password matches
+                    verify_pass();   //Goto verification function
+                    if(match==1)    //If pass matches
                     {
                         if(open==0) //If the door is closed
                         {
@@ -164,8 +163,8 @@ void run_key_function(void)
                             open=0;   //Update door status
                             PORTC&=0XFE; //Turn Off the relay
                             for(temp2=0;temp2<=3;temp2++)
-                            { //Update the number array with default values
-                                number[temp2]=10;
+                            { //Update the no array with default values
+                                no[temp2]=10;
                             }
                             match=0;   //Update the match variable
                         }    //Else the door will open if open key is pressed
@@ -176,7 +175,7 @@ void run_key_function(void)
                         miss_match++;
                         for(temp2=0;temp2<=3;temp2++)
                         {
-                            number[temp2]=10;
+                            no[temp2]=10;
                         }
                         display();
                         if(miss_match==3)
@@ -207,14 +206,14 @@ void run_key_function(void)
      }
 }
 
-void verify_password(void)
+void verify_pass(void)
 {
-    match=1;       //Assume password matches
+    match=1;       //Assume pass matches
     for(temp2=0;temp2<=3;temp2++)
-    {//Compare the data of each address location of entered number and password
-        if(number[temp2]!=password[temp2])
+    {//Compare the data of each address location of entered no and pass
+        if(no[temp2]!=pass[temp2])
         {    //If there is a miss-match at any address location
-            match=0;      //Password doesnot match.
+            match=0;      //pass doesnot match.
             temp2=10;     //Exit from for loop
         }
     }
@@ -224,13 +223,13 @@ void display(void)
 {
     for(digit=4,temp1=1;digit>=1;digit--)
     {
-        if(number[digit-1]!=10)
+        if(no[digit-1]!=10)
         {
             PORTD&=0X0F;
             PORTD|=~temp1*16;
             if(show==1)
             {
-                show_digit(number[digit-1]);
+                show_digit(no[digit-1]);
             }
             else
             {
