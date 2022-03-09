@@ -8,7 +8,6 @@ void uart_send_string(char strng[50]);
 void uart_send_char(char a);
 void eeprom_wrt(int addr,char dta);
 char eeprom_rd(int addr);
-
 char temp,col,key=0,no[4]={10,10,10,10},index,pass[4],temp1,digit;
 char show=1,open=0,match=0,temp2,miss_match,temp4,block=0;
 char contact_no[10]={'1','2','3','4','5','6','7','8','9','0'};
